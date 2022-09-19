@@ -90,4 +90,4 @@ while (count < 4) {
 }
 
 console.log(victim);
-alert("생존한 시민 : " + victim);
+// alert("생존한 시민 : " + victim);

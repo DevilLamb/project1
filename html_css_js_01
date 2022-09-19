@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style></style>
+    //style태그는 헤드에
+  </head>
+
+  <body>
+    <script type="text/javascript" src=""></script>
+    //script태그는 head보다 하단에 위치하기
+  </body>
+</html>
+
+<
