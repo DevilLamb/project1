@@ -58,4 +58,4 @@ function test() {
   var z = 3;
 }
 
-console.log(z);
+//console.log(z);//함수 스코프만 인식..

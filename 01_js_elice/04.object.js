@@ -35,5 +35,5 @@ let rabbit = {
 };
 
 console.log("rabbit=", rabbit);
-rabbit["isPet"] = false;
+rabbit["isPet"] = false; //.으로도 접근할 수 있고, []로도 접근할 수 있다.
 console.log("rabbit=", rabbit);
