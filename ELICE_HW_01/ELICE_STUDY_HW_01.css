@@ -1,0 +1,106 @@
+.header {
+  font-family: "Nanum Gothic", sans-serif;
+  color: white;
+  background-color: gray;
+}
+
+.nav {
+  display: flex;
+}
+
+.header_ul {
+  display: flex;
+  float: left;
+  list-style: none;
+}
+
+.header_Profile {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: inherit; /* 링크 색상 제거 */
+
+  margin: 20px;
+}
+
+.header_Profile:hover {
+  transition: 0.5s;
+  background-color: darkgray;
+  letter-spacing: 4px; /*글자 사이 간격 조정*/
+}
+
+.header_Details {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: inherit; /* 링크 색상 제거 */
+  margin: 20px;
+}
+
+.header_Details:hover {
+  transition: 0.5s;
+  background-color: darkgray;
+  letter-spacing: 4px;
+}
+
+.body_main {
+  margin: 20px;
+  padding: 20px;
+  font-family: "Nanum Gothic", sans-serif;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;  미디어 쿼리 속성으로 넣음*/
+}
+
+.pro_pic {
+  align-items: center;
+}
+
+.pic_div {
+  height: 320px;
+  width: 320px;
+  overflow: hidden;
+}
+
+.pro_img:hover {
+  transition: 1s;
+  transform: scale(1.5);
+  overflow: hidden;
+}
+
+.pro_Details {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-gap: 10px;
+}
+
+.Personal_info {
+}
+
+.Edu_info {
+  /* display: flex;
+  align-content: center; 플렉스 말고 그리드로 한번에 정렬함*/
+}
+
+.Career_info {
+  /* display: flex;
+  align-content: center;*/
+}
+
+.have_skill {
+  /* display: flex;
+  align-content: center; */
+}
+
+.footer {
+  font-family: "Nanum Gothic", sans-serif;
+  padding: 30px;
+  width: 100%;
+  background-color: lightgrey;
+  /* align-items: end;
+  flex-direction: row; */
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
+  .body_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
