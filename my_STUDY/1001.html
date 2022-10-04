@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="버튼">버튼이에요</button>
+
+    <script>
+      function 시간바꿔줘() {
+        setTimeout(function () {
+          console.log(버튼.innerHTML);
+        }, 1000);
+      }
+      document.getElementById("버튼").addEventListener("click", 시간바꿔줘);
+    </script>
+  </body>
+</html>
