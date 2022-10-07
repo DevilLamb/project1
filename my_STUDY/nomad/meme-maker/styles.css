@@ -1,38 +1,91 @@
+@import "reset.css";
+
+body {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #f7d794;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
 canvas {
   width: 800px;
   height: 800px;
-  margin: 0 1vw 20px 1vw;
-  border: 5px solid black;
+  background-color: white;
+  border-radius: 15px;
 }
 
 body {
   display: flex;
-  /* flex-wrap: nowrap; */
   justify-content: center;
   align-items: center;
 }
 
-/* .container {
-  display: grid;
+.btns {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.canvas {
-  grid-area: canvas;
+button,
+label {
+  all: unset;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #778beb;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: opacity linear 0.3s;
 }
 
-input {
-  grid-area: size;
-} */
+button:hover {
+  opacity: 0.5;
+}
+
+input.text {
+  all: unset;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 500;
+  background-color: white;
+}
+
+/* lable을 사용하고 파일추가 버튼은 감춰버린다. 
+id만 같으면 위치 상관 없이 가리기 가능. */
+input#file {
+  display: none;
+}
+
 .color {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   align-items: center;
-  justify-content: center;
+}
+
+input.canvascolor {
+  width: 50px;
+  height: 30px;
+  border-radius: 10px;
 }
 
 .colorOption {
   width: 50px;
   height: 50px;
+  border-radius: 25px;
   cursor: pointer;
+  transition: transform ease-in-out 0.3s;
 }
+
+.colorOption:hover {
+  transform: scale(1.2);
+}
+
 /* 
 .fillbtn {
   grid-area: fillbtn;

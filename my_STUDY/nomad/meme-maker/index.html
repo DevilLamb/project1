@@ -8,9 +8,58 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <canvas class="canvas"></canvas>
+    <div class="color">
+      <input class="canvascolor" type="color" />
+      <div
+        class="colorOption"
+        style="background-color: #c44569"
+        data-color="#c44569"
+      ></div>
+      <div
+        class="colorOption"
+        style="background-color: #f78fb3"
+        data-color="#f78fb3"
+      ></div>
+      <div
+        class="colorOption"
+        style="background-color: #e66767"
+        data-color="#e66767"
+      ></div>
+      <div
+        class="colorOption"
+        style="background-color: #f19066"
+        data-color="#f19066"
+      ></div>
+      <div
+        class="colorOption"
+        style="background-color: #f5cd79"
+        data-color="#f5cd79"
+      ></div>
+      <div
+        class="colorOption"
+        style="background-color: #3dc1d3"
+        data-color="#3dc1d3"
+      ></div>
+      <div
+        class="colorOption"
+        style="background-color: #546de5"
+        data-color="#546de5"
+      ></div>
+      <div
+        class="colorOption"
+        style="background-color: #574b90"
+        data-color="#574b90"
+      ></div>
+      <div
+        class="colorOption"
+        style="background-color: #303952"
+        data-color="#303952"
+      ></div>
+    </div>
+    <canvas class="canvas"></canvas>
+    <div class="btns">
       <input
+        id="size"
         class="line-weidth"
         type="range"
         min="1"
@@ -19,64 +68,17 @@
         step="0.5"
       />
 
-      <div class="color">
-        <input class="canvascolor" type="color" />
-        <div
-          class="colorOption"
-          style="background-color: #c44569"
-          data-color="#c44569"
-        ></div>
-        <div
-          class="colorOption"
-          style="background-color: #f78fb3"
-          data-color="#f78fb3"
-        ></div>
-        <div
-          class="colorOption"
-          style="background-color: #e66767"
-          data-color="#e66767"
-        ></div>
-        <div
-          class="colorOption"
-          style="background-color: #f19066"
-          data-color="#f19066"
-        ></div>
-        <div
-          class="colorOption"
-          style="background-color: #f5cd79"
-          data-color="#f5cd79"
-        ></div>
-        <div
-          class="colorOption"
-          style="background-color: #3dc1d3"
-          data-color="#3dc1d3"
-        ></div>
-        <div
-          class="colorOption"
-          style="background-color: #546de5"
-          data-color="#546de5"
-        ></div>
-        <div
-          class="colorOption"
-          style="background-color: #574b90"
-          data-color="#574b90"
-        ></div>
-        <div
-          class="colorOption"
-          style="background-color: #303952"
-          data-color="#303952"
-        ></div>
-      </div>
-      <button class="fillbtn">Fill</button>
-      <button class="Eraser">Eraser All</button>
-      <button class="Eraserbtn">Eraser</button>
+      <button class="fillbtn">🌈 Fill</button>
+      <button class="Eraser">✨ Eraser All</button>
+      <button class="Eraserbtn">✍ Eraser</button>
       <!-- 인풋에 파일만 받을건데 이미지/*확장자는 뭐든 상관없음 -->
-      <input type="file" accept="image/*" class="file" />
-      <input
-        type="text"
-        placeholder="Write and then double click"
-        class="text"
-      />
+
+      <label for="file"
+        >📊 ADD PHOTO<input type="file" accept="image/*" class="file" id="file"
+      /></label>
+
+      <button class="save">💾 Save</button>
+      <input type="text" placeholder="Add text" class="text" />
     </div>
     <!-- <Canvas></Canvas> 이 엘리멘트만 있으면
     WEB GL 기술로 3D도 넣을 수 있다.

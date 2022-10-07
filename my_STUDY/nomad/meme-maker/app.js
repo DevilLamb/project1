@@ -9,6 +9,7 @@ const Eraserbtn = document.querySelector(".Eraserbtn");
 const inputFile = document.querySelector(".file");
 const text = document.querySelector(".text");
 
+const save = document.querySelector(".save");
 //.getContext 로 2d 로 그릴지 3d(web gl)로 그릴지 선택할 수 있다.
 const ctx = canvas.getContext("2d");
 
@@ -16,7 +17,8 @@ const ctx = canvas.getContext("2d");
 //css가 아닌 자바스크립트에서 크기를 설정해주고, 수정한다.
 canvas.width = 800;
 canvas.height = 800;
-ctx.lineWidth = lineweidth.value;
+ctx.lineWidth = lineweidth.value; //기본 선은 선굵기의 기본값.
+ctx.lineCap = "round"; //선 끝을 둥글게.
 
 let isPaint = false;
 let isFill = false;
@@ -93,21 +95,38 @@ function onEraser() {
 //파일올리기
 function onFile(event) {
   const files = event.target.files[0];
+  //멀티플 속성을 이용하면 여러개 올라가지만 여기서는 하나만 올리니까 0번째에 있음
   const url = URL.createObjectURL(files);
-  const image = new Image(); //<img>랑 똑같음
+  const image = new Image(); // creatElements 쓴거랑 같다. <img>랑 똑같음
   image.src = url; //img src = ~
   image.onload = function () {
-    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height); //이미지 위치와 크기 맞춰줌
     inputFile.value = null;
   };
 }
 
+//텍스트 입력하기
 function onDoubleclick(event) {
+  ctx.save(); //기존 상태 저장
   const intext = text.value;
-  ctx.strokeText(intext, event.offsetX, event.offsetY);
+  if (text !== "") {
+    ctx.lineWidth = 1; //값 바꾸고
+    ctx.font = "60px serif";
+    ctx.fillText(intext, event.offsetX, event.offsetY);
+    ctx.restore(); //save 헀던 상태로 돌아감
+  }
 }
 
-canvas.addEventListener("dblclick", onDoubleclick);
+//그린 이미지를 저장해주는 함수
+function onsave() {
+  const url = canvas.toDataURL(); //그린 이미지를 url로 바꿔서
+  const a = document.createElement("a"); //링크 생성
+  a.href = url; //경로도 생성해주고
+  a.download = "myDraw.png"; //다운로드 속성으로 이미지 이름 설정
+  a.click(); //링크를 클릭하면 다운로드됨
+}
+
+canvas.addEventListener("dblclick", onDoubleclick); //더블클릭하면 실행되는..
 canvas.addEventListener("mousemove", moveOn);
 canvas.addEventListener("mousedown", onMousedown);
 canvas.addEventListener("click", onCanvars);
@@ -120,6 +139,7 @@ fillbtn.addEventListener("click", onModeclick);
 Eraser.addEventListener("click", onclear);
 Eraserbtn.addEventListener("click", onEraser);
 inputFile.addEventListener("change", onFile);
+save.addEventListener("click", onsave);
 
 //----마우스가 움직일때마다 선을 그어줌------------
 
