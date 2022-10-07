@@ -1,5 +1,5 @@
 ---
 
-### Kim bo ra
+### STUDY FILE
 
-init commit. THX
+thx
